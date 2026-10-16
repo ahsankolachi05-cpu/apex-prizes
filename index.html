@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Joseph — Win Dream Cars, Cash &amp; Luxury Prizes</title>
+    <meta name="description" content="Enter UK prize competitions to win dream cars, tax-free cash and luxury lifestyle prizes. Play Spot the Ball, secure checkout, guaranteed draws every week." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <style>
+      :root{
+        --bg:#f4f6f9; --surface:#ffffff; --surface-2:#eceff4;
+        --ink:#0c1425; --ink-2:#3d475e; --muted:#68738a;
+        --line:#dde2ec; --navy:#081120; --navy-2:#0e1c38;
+        --gold:#c9a227; --gold-2:#e9cd6d; --gold-ink:#7a5f06;
+        --green:#0f7a54; --red:#cf2b1f;
+        --shadow:0 18px 44px rgba(8,17,32,.14);
+        --radius:14px;
+        color-scheme:light;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#070d1a; --surface:#0e1830; --surface-2:#13203c;
+          --ink:#eef1f8; --ink-2:#b9c2d6; --muted:#8b96ad;
+          --line:#21314f; --navy:#050b16; --navy-2:#0a1428;
+          --gold:#d9b83a; --gold-2:#eed67e; --gold-ink:#e9cd6d;
+          --shadow:0 18px 44px rgba(0,0,0,.5);
+          color-scheme:dark;
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);font-family:"Barlow",system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+      img{display:block;max-width:100%}
+      a{color:inherit}
+      button{font:inherit;cursor:pointer}
+      .wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+      .disp{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.95}
+      .gold{color:var(--gold)}
+      .icon{width:20px;height:20px;stroke-width:2}
+
+      /* announcement */
+      .announce{background:var(--navy);color:#dbe3f2;font-size:.83rem;font-weight:600;letter-spacing:.04em;text-align:center;padding:8px 16px}
+      .announce b{color:var(--gold-2)}
+
+      /* header */
+      header.site{position:sticky;top:0;z-index:60;background:var(--navy);color:#fff;border-bottom:2px solid var(--gold)}
+      .header-in{display:flex;align-items:center;gap:28px;padding:14px 0}
+      .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+      .logo-mark{width:42px;height:42px;background:var(--gold);color:#081120;display:grid;place-items:center;font-family:"Barlow Condensed";font-weight:700;font-size:1.5rem;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+      .logo b{font-family:"Barlow Condensed";font-size:1.65rem;letter-spacing:.06em;line-height:1;display:block}
+      .logo small{display:block;font-size:.62rem;letter-spacing:.34em;color:var(--gold-2);font-weight:700}
+      nav.main{display:flex;gap:26px;margin-left:auto}
+      nav.main a{color:#cdd6e8;text-decoration:none;font-weight:600;font-size:.95rem}
+      nav.main a:hover{color:#fff}
+      .head-actions{display:flex;align-items:center;gap:10px;margin-left:8px}
+      .basket-btn{position:relative;display:flex;align-items:center;gap:9px;background:var(--gold);color:#081120;border:none;font-weight:700;padding:10px 18px;border-radius:9px;font-size:.95rem}
+      .basket-btn:hover{background:var(--gold-2)}
+      .basket-count{position:absolute;top:-8px;right:-8px;background:var(--red);color:#fff;font-size:.72rem;font-weight:700;min-width:21px;height:21px;border-radius:99px;display:grid;place-items:center;padding:0 5px}
+      .basket-count[hidden]{display:none}
+      .burger{display:none;background:none;border:1px solid #33436a;color:#fff;border-radius:9px;padding:9px 11px}
+      .mobile-nav{display:none;background:var(--navy-2);padding:6px 0 14px}
+      .mobile-nav a{display:block;color:#dbe3f2;text-decoration:none;font-weight:600;padding:10px 4px;border-bottom:1px solid #1d2c4e}
+      .mobile-nav.open{display:block}
+
+      /* hero */
+      .hero{position:relative;background:#05090f;color:#fff;overflow:hidden}
+      .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%}
+      .hero .veil{position:absolute;inset:0;background:linear-gradient(97deg,rgba(4,8,16,.92) 26%,rgba(4,8,16,.55) 58%,rgba(4,8,16,.18) 100%)}
+      .hero-in{position:relative;padding:92px 0 84px;max-width:640px}
+      .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,39,.16);border:1px solid rgba(201,162,39,.65);color:var(--gold-2);font-weight:700;font-size:.8rem;letter-spacing:.14em;padding:7px 13px;border-radius:99px;text-transform:uppercase}
+      .hero h1{font-size:clamp(3rem,7.4vw,5.4rem);margin:20px 0 6px;font-weight:700}
+      .hero h1 span{color:var(--gold)}
+      .hero .alt{font-size:1.22rem;color:#d7deee;font-weight:500;margin:0 0 8px}
+      .hero .alt b{color:#fff}
+      .count-row{display:flex;gap:10px;margin:26px 0 30px}
+      .count-box{background:rgba(10,18,34,.82);border:1px solid #2b3c61;border-radius:10px;min-width:74px;padding:10px 6px;text-align:center;backdrop-filter:blur(3px)}
+      .count-box b{font-family:"Barlow Condensed";font-size:1.9rem;display:block;line-height:1;color:#fff}
+      .count-box small{font-size:.68rem;letter-spacing:.18em;color:#93a2c0;font-weight:700}
+      .hero-buy{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+      .bundle-picker{display:flex;background:rgba(10,18,34,.85);border:1px solid #2b3c61;border-radius:11px;overflow:hidden}
+      .bundle-picker button{background:none;border:none;color:#aebad2;font-weight:700;padding:12px 15px;font-size:.95rem;border-right:1px solid #2b3c61}
+      .bundle-picker button:last-child{border-right:none}
+      .bundle-picker button.sel{background:var(--gold);color:#081120}
+      .hero-price{display:flex;flex-direction:column;justify-content:center}
+      .hero-price small{color:#93a2c0;font-weight:600;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase}
+      .hero-price b{font-family:"Barlow Condensed";font-size:1.7rem;line-height:1}
+      .btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:10px;font-weight:700;text-decoration:none;transition:transform .15s ease,background .15s ease}
+      .btn-gold{background:var(--gold);color:#081120;padding:14px 26px;font-size:1.02rem}
+      .btn-gold:hover{background:var(--gold-2)}
+      .btn:active{transform:scale(.98)}
+      .trust-row{display:flex;flex-wrap:wrap;gap:20px;margin-top:30px;color:#c3cee2;font-size:.9rem;font-weight:600}
+      .trust-row span{display:inline-flex;align-items:center;gap:7px}
+      .trust-row .icon{width:17px;height:17px;color:var(--gold-2)}
+
+      /* sections */
+      section{padding:74px 0}
+      .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:30px;flex-wrap:wrap}
+      .sec-head h2{font-size:clamp(2rem,4vw,2.9rem);margin:0;font-weight:700}
+      .sec-head p{color:var(--ink-2);margin:6px 0 0;max-width:560px}
+      .kicker{color:var(--gold-ink);font-weight:700;letter-spacing:.22em;font-size:.76rem;text-transform:uppercase;display:block;margin-bottom:8px}
+
+      /* filters + grid */
+      .filters{display:flex;gap:9px;flex-wrap:wrap}
+      .chip{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:99px;padding:9px 18px;font-weight:700;font-size:.92rem}
+      .chip.sel{background:var(--navy);color:#fff;border-color:var(--navy)}
+      @media (prefers-color-scheme: dark){.chip.sel{background:var(--gold);color:#081120;border-color:var(--gold)}}
+      .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+      .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+      .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+      .card .ph{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
+      .card .ph img{width:100%;height:100%;object-fit:cover}
+      .card .ph.cash{background:linear-gradient(135deg,#0d2242,#081120);display:grid;place-items:center}
+      .cash-art{text-align:center;color:#fff;padding:20px}
+      .cash-art .amt{font-family:"Barlow Condensed";font-size:clamp(2.6rem,4vw,3.4rem);font-weight:700;color:var(--gold-2);line-height:1}
+      .cash-art small{letter-spacing:.3em;font-weight:700;font-size:.7rem;color:#aebad2}
+      .ends-badge{position:absolute;top:12px;left:12px;background:rgba(5,9,16,.86);color:#fff;font-size:.78rem;font-weight:700;padding:6px 11px;border-radius:99px;display:inline-flex;gap:6px;align-items:center}
+      .ends-badge .icon{width:14px;height:14px;color:var(--gold-2)}
+      .ends-badge.hot{background:var(--red)}
+      .cat-badge{position:absolute;top:12px;right:12px;background:var(--gold);color:#081120;font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:6px 10px;border-radius:99px;text-transform:uppercase}
+      .card-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:9px;flex:1}
+      .card h3{font-family:"Barlow Condensed";font-size:1.55rem;margin:0;line-height:1.02;text-transform:uppercase;font-weight:600}
+      .card .cashalt{color:var(--muted);font-size:.92rem;font-weight:600;margin:0}
+      .card .cashalt b{color:var(--ink-2)}
+      .sold{margin-top:2px}
+      .sold .bar{height:7px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+      .sold .fill{height:100%;background:var(--gold);border-radius:99px}
+      .sold small{color:var(--muted);font-weight:600;font-size:.8rem}
+      .card-foot{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:12px}
+      .price-box small{display:block;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+      .price-box b{font-family:"Barlow Condensed";font-size:1.6rem;line-height:1}
+      .qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-left:auto}
+      .qty button{width:32px;height:38px;background:var(--surface-2);border:none;font-size:1.05rem;font-weight:700;color:var(--ink)}
+      .qty output{min-width:30px;text-align:center;font-weight:700}
+      .add-btn{background:var(--navy);color:#fff;border:none;border-radius:9px;padding:11px 16px;font-weight:700;display:inline-flex;gap:7px;align-items:center}
+      .add-btn:hover{background:var(--navy-2)}
+      @media (prefers-color-scheme: dark){.add-btn{background:var(--gold);color:#081120}.add-btn:hover{background:var(--gold-2)}}
+      .add-btn .icon{width:17px;height:17px}
+
+      /* spot the ball */
+      .spot{background:var(--navy);color:#e8edf7}
+      .spot h2{color:#fff}
+      .spot .sec-head p{color:#a7b3cc}
+      .spot-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:34px;align-items:start}
+      .spot-steps{display:grid;gap:14px;margin:0 0 20px;padding:0;list-style:none}
+      .spot-steps li{display:flex;gap:13px;background:var(--navy-2);border:1px solid #1e2f52;border-radius:12px;padding:15px 17px}
+      .spot-steps .n{font-family:"Barlow Condensed";font-size:1.5rem;color:var(--gold);font-weight:700;line-height:1}
+      .spot-steps p{margin:0;font-size:.95rem;color:#c3cee2}
+      .spot-steps b{color:#fff}
+      .spot label.flabel{display:block;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#93a2c0;margin:16px 0 7px}
+      .spot select{width:100%;background:var(--navy-2);color:#fff;border:1px solid #2b3c61;border-radius:10px;padding:12px 14px;font:inherit;font-weight:600}
+      .coords-readout{display:flex;gap:10px;margin-top:16px}
+      .coords-readout div{flex:1;background:var(--navy-2);border:1px solid #1e2f52;border-radius:10px;padding:10px 14px;text-align:center}
+      .coords-readout small{display:block;color:#93a2c0;font-size:.7rem;letter-spacing:.16em;font-weight:700}
+      .coords-readout b{font-family:"Barlow Condensed";font-size:1.5rem;color:var(--gold-2)}
+      .entries-list{display:grid;gap:8px;margin-top:16px}
+      .entry-chip{display:flex;align-items:center;gap:10px;background:var(--navy-2);border:1px solid #1e2f52;border-radius:9px;padding:9px 13px;font-size:.92rem;font-weight:600}
+      .entry-chip .icon{width:15px;height:15px;color:var(--gold-2)}
+      .entry-chip button{margin-left:auto;background:none;border:none;color:#8fa0c0;padding:4px}
+      .entry-chip button:hover{color:#fff}
+      .spot-empty{color:#7e8cab;font-size:.92rem;border:1px dashed #2b3c61;border-radius:9px;padding:12px 14px;text-align:center}
+      .pitch{position:relative;border-radius:16px;overflow:hidden;border:1px solid #2b3c61;cursor:crosshair;background:#0a2c17}
+      .pitch img{width:100%;aspect-ratio:16/10;object-fit:cover;user-select:none;-webkit-user-drag:none}
+      .pitch .cross-h,.pitch .cross-v{position:absolute;background:rgba(233,205,109,.55);pointer-events:none;opacity:0}
+      .pitch .cross-h{left:0;right:0;height:1px}
+      .pitch .cross-v{top:0;bottom:0;width:1px}
+      .marker{position:absolute;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:rgba(201,162,39,.25);border:2px solid var(--gold-2);display:grid;place-items:center;color:#fff;font-weight:700;font-size:.8rem;pointer-events:none;box-shadow:0 0 0 3px rgba(5,9,16,.35)}
+      .marker::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#fff}
+      .pitch-hint{position:absolute;left:12px;bottom:12px;background:rgba(5,9,16,.85);color:#dbe3f2;font-size:.8rem;font-weight:600;padding:7px 12px;border-radius:99px;pointer-events:none}
+      .spot-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+      .btn-outline{background:transparent;border:1px solid #3b507c;color:#dbe3f2;padding:13px 22px}
+      .btn-outline:hover{border-color:var(--gold);color:var(--gold-2)}
+
+      /* how it works */
+      .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+      .step{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 22px}
+      .step .ic{width:48px;height:48px;border-radius:12px;background:var(--navy);color:var(--gold-2);display:grid;place-items:center;margin-bottom:15px}
+      @media (prefers-color-scheme: dark){.step .ic{background:var(--gold);color:#081120}}
+      .step .ic .icon{width:23px;height:23px}
+      .step h3{font-family:"Barlow Condensed";font-size:1.35rem;text-transform:uppercase;margin:0 0 7px;font-weight:600}
+      .step p{margin:0;color:var(--ink-2);font-size:.95rem}
+      .step .num{float:right;font-family:"Barlow Condensed";font-size:2rem;color:var(--line);font-weight:700;line-height:1}
+
+      /* winners */
+      .winners-sec{background:var(--surface-2)}
+      .winners{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+      .winner{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+      .winner .top{display:flex;gap:14px;align-items:center;margin-bottom:13px}
+      .avatar{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--gold-2);display:grid;place-items:center;font-family:"Barlow Condensed";font-size:1.25rem;font-weight:700;flex:none}
+      .winner h3{margin:0;font-size:1.08rem}
+      .winner .meta{color:var(--muted);font-size:.87rem;font-weight:600}
+      .winner .prize{display:inline-block;background:rgba(201,162,39,.15);color:var(--gold-ink);font-weight:700;font-size:.85rem;padding:5px 11px;border-radius:99px;margin-bottom:11px}
+      .winner blockquote{margin:0;color:var(--ink-2);font-size:.97rem}
+      .demo-note{color:var(--muted);font-size:.85rem;margin-top:18px}
+
+      /* bundles */
+      .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+      .bundle{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;text-align:center;display:flex;flex-direction:column;gap:8px}
+      .bundle.pop{border:2px solid var(--gold);position:relative}
+      .bundle .flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#081120;font-weight:700;font-size:.76rem;letter-spacing:.1em;padding:5px 14px;border-radius:99px;text-transform:uppercase;white-space:nowrap}
+      .bundle .tk{font-family:"Barlow Condensed";font-size:3rem;font-weight:700;line-height:1}
+      .bundle .tk small{font-size:1.2rem;color:var(--muted);font-weight:600}
+      .bundle .save{color:var(--green);font-weight:700}
+      .bundle .was{color:var(--muted);text-decoration:line-through;font-weight:600}
+      .bundle .now{font-family:"Barlow Condensed";font-size:2rem;font-weight:700}
+      .bundle p{color:var(--ink-2);margin:0;font-size:.94rem}
+      .bundle .btn{justify-content:center;margin-top:auto}
+
+      /* payment band */
+      .payband{background:var(--navy);color:#dbe3f2}
+      .payband h2{color:#fff}
+      .pay-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:38px;align-items:center}
+      .pay-points{display:grid;gap:15px}
+      .pay-point{display:flex;gap:13px}
+      .pay-point .icon{color:var(--gold-2);flex:none;margin-top:2px}
+      .pay-point b{color:#fff;display:block}
+      .pay-point p{margin:2px 0 0;color:#a7b3cc;font-size:.95rem}
+      .pay-cards{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+      .pay-chip{background:#fff;color:#14213d;font-weight:700;border-radius:8px;padding:9px 16px;font-size:.92rem;display:inline-flex;align-items:center;gap:8px}
+      .pay-chip .icon{width:17px;height:17px}
+      .pay-demo{background:var(--navy-2);border:1px solid #22345c;border-radius:14px;padding:22px 24px;font-size:.95rem;color:#c3cee2}
+      .pay-demo b{color:var(--gold-2)}
+
+      /* faq */
+      .faq{max-width:820px}
+      .faq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:11px;overflow:hidden}
+      .faq summary{padding:18px 22px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+      .faq summary::-webkit-details-marker{display:none}
+      .faq summary .icon{flex:none;color:var(--gold-ink);transition:transform .2s}
+      .faq details[open ] summary .icon{transform:rotate(45deg)}
+      .faq .a{padding:0 22px 19px;color:var(--ink-2)}
+      .faq .a p{margin:0}
+
+      footer{background:var(--navy);color:#a7b3cc;padding:58px 0 34px}
+      .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:38px}
+      footer h4{color:#fff;font-family:"Barlow Condensed";font-size:1.15rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 14px}
+      footer ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+      footer a{color:#a7b3cc;text-decoration:none;font-size:.94rem}
+      footer a:hover{color:#fff}
+      footer .blurb{font-size:.94rem;max-width:300px}
+      .age-badge{display:inline-grid;place-items:center;width:44px;height:44px;border:2px solid var(--red);color:#ff7a70;border-radius:50%;font-weight:700;font-size:.85rem;margin-top:16px}
+      .foot-small{border-top:1px solid #1d2c4e;padding-top:22px;font-size:.84rem;display:grid;gap:8px}
+      .foot-small a{color:var(--gold-2)}
+
+      /* drawer + modal */
+      .overlay{position:fixed;inset:0;background:rgba(4,8,16,.6);opacity:0;pointer-events:none;transition:opacity .25s;z-index:80}
+      .overlay.show{opacity:1;pointer-events:auto}
+      .drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,94vw);background:var(--surface);z-index:90;transform:translateX(105%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+      .drawer.open{transform:none;visibility:visible;transition:transform .3s ease}
+      .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+      .drawer-head h3{font-family:"Barlow Condensed";font-size:1.5rem;text-transform:uppercase;margin:0}
+      .x-btn{background:var(--surface-2);border:none;border-radius:8px;width:36px;height:36px;display:grid;place-items:center;color:var(--ink)}
+      .drawer-items{flex:1;overflow-y:auto;padding:16px 22px;display:flex;flex-direction:column;gap:13px}
+      .line-item{border:1px solid var(--line);border-radius:12px;padding:14px 15px}
+      .line-item .t{display:flex;justify-content:space-between;gap:10px;font-weight:700}
+      .line-item .t button{background:none;border:none;color:var(--muted);padding:2px}
+      .line-item .t button:hover{color:var(--red)}
+      .line-item .sub{color:var(--muted);font-size:.87rem;font-weight:600;margin-top:2px}
+      .line-item .r{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+      .line-item .r b{font-family:"Barlow Condensed";font-size:1.3rem}
+      .drawer-empty{text-align:center;color:var(--muted);padding:44px 10px}
+      .drawer-empty .icon{width:42px;height:42px;margin:0 auto 12px;color:var(--line)}
+      .drawer-foot{border-top:1px solid var(--line);padding:18px 22px 22px}
+      .total-row{display:flex;justify-content:space-between;font-size:1.05rem;margin-bottom:5px}
+      .total-row.grand{font-family:"Barlow Condensed";font-size:1.6rem;font-weight:700}
+      .secure-note{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:.85rem;font-weight:600;justify-content:center;margin-top:12px}
+      .secure-note .icon{width:15px;height:15px;color:var(--green)}
+      .btn-block{width:100%;justify-content:center}
+
+      .modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:18px}
+      .modal.open{display:grid}
+      .modal-card{background:var(--surface);border-radius:18px;width:min(520px,100%);max-height:92vh;overflow-y:auto;box-shadow:var(--shadow);position:relative;z-index:2}
+      .modal-head{padding:24px 26px 0;display:flex;justify-content:space-between;align-items:flex-start}
+      .modal-head h3{font-family:"Barlow Condensed";font-size:1.8rem;text-transform:uppercase;margin:0}
+      .modal-body{padding:18px 26px 28px}
+      .order-lines{display:grid;gap:7px;background:var(--surface-2);border-radius:12px;padding:15px 17px;margin-bottom:20px;font-size:.94rem}
+      .order-lines .r{display:flex;justify-content:space-between;gap:12px}
+      .order-lines .r.grand{font-weight:700;border-top:1px solid var(--line);padding-top:8px;font-size:1.05rem}
+      .field{margin-bottom:15px}
+      .field label{display:block;font-weight:700;font-size:.85rem;margin-bottom:6px}
+      .field input{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:12px 14px;font:inherit}
+      .field input:focus{outline:2px solid var(--gold);border-color:transparent}
+      .field .err{color:var(--red);font-size:.83rem;font-weight:600;margin-top:5px;display:none}
+      .field.invalid input{border-color:var(--red)}
+      .field.invalid .err{display:block}
+      .frow{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+      .demo-strip{display:flex;gap:9px;background:rgba(201,162,39,.13);border:1px solid rgba(201,162,39,.5);color:var(--gold-ink);border-radius:10px;padding:11px 14px;font-size:.88rem;font-weight:600;margin-bottom:18px;align-items:flex-start}
+      .demo-strip .icon{width:17px;height:17px;flex:none;margin-top:1px}
+      .success{text-align:center;padding:8px 0 4px}
+      .success .tick{width:70px;height:70px;border-radius:50%;background:rgba(15,122,84,.13);color:var(--green);display:grid;place-items:center;margin:0 auto 16px}
+      .success .tick .icon{width:34px;height:34px}
+      .success h4{font-family:"Barlow Condensed";font-size:1.7rem;text-transform:uppercase;margin:0 0 6px}
+      .success p{color:var(--ink-2);margin:0 0 6px}
+      .success .ref{font-weight:700;font-size:1.05rem}
+      .success .acts{display:grid;gap:10px;margin-top:20px}
+      .btn-dark{background:var(--navy);color:#fff;padding:13px 22px;justify-content:center}
+      @media (prefers-color-scheme: dark){.btn-dark{background:var(--surface-2);color:var(--ink)}}
+      .btn-plain{background:none;border:1px solid var(--line);color:var(--ink);padding:12px 22px;justify-content:center}
+      .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+      .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);background:var(--navy);color:#fff;padding:13px 20px;border-radius:11px;font-weight:600;display:flex;gap:9px;align-items:center;z-index:120;transition:transform .3s ease;box-shadow:var(--shadow);max-width:92vw}
+      .toast.show{transform:translate(-50%,0)}
+      .toast .icon{color:var(--gold-2);width:18px;height:18px;flex:none}
+
+      .reveal{opacity:1;transform:none}
+
+      @media (max-width:1020px){
+        .grid{grid-template-columns:repeat(2,1fr)}
+        .steps{grid-template-columns:repeat(2,1fr)}
+        .spot-grid{grid-template-columns:1fr}
+        .pay-grid{grid-template-columns:1fr}
+        .foot-grid{grid-template-columns:1fr 1fr}
+      }
+      @media (max-width:680px){
+        nav.main{display:none}
+        .burger{display:grid;place-items:center}
+        .grid,.winners,.bundles{grid-template-columns:1fr}
+        .steps{grid-template-columns:1fr}
+        .hero-in{padding:58px 0 56px}
+        .count-box{min-width:64px}
+        .basket-btn .bt-label{display:none}
+        .basket-btn{padding:10px 12px}
+        section{padding:54px 0}
+        .foot-grid{grid-template-columns:1fr}
+        .frow{grid-template-columns:1fr 1fr}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="announce">Friday's headline draw closes <b>8:00pm</b> — every car ticket includes a game of Spot the Ball &nbsp;·&nbsp; 18+ only &nbsp;·&nbsp; Please play responsibly</div>
+
+    <header class="site">
+      <div class="wrap header-in">
+        <a class="logo" href="#top" aria-label="Joseph home">
+          <span class="logo-mark">J</span>
+          <span><b>JOSEPH</b><small>PRIZES</small></span>
+        </a>
+        <nav class="main" aria-label="Main">
+          <a href="#competitions">Competitions</a>
+          <a href="#spot">Spot the Ball</a>
+          <a href="#how">How It Works</a>
+          <a href="#winners">Winners</a>
+          <a href="#bundles">Bundles</a>
+          <a href="#faq">Help &amp; FAQs</a>
+        </nav>
+        <div class="head-actions">
+          <button class="basket-btn" id="basketBtn" aria-label="Open basket">
+            <i data-lucide="shopping-basket" class="icon"></i><span class="bt-label">Basket</span>
+            <span class="basket-count" id="basketCount" hidden>0</span>
+          </button>
+          <button class="burger" id="burger" aria-label="Open menu"><i data-lucide="menu" class="icon"></i></button>
+        </div>
+      </div>
+      <div class="wrap mobile-nav" id="mobileNav">
+        <a href="#competitions">Competitions</a>
+        <a href="#spot">Spot the Ball</a>
+        <a href="#how">How It Works</a>
+        <a href="#winners">Winners</a>
+        <a href="#bundles">Bundles</a>
+        <a href="#faq">Help &amp; FAQs</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" style="padding:0">
+        <img class="bg" src="images/img-0.jpg" alt="Red Lamborghini Huracán in a dark studio with drifting smoke" />
+        <div class="veil"></div>
+        <div class="wrap">
+          <div class="hero-in">
+            <span class="hero-tag"><i data-lucide="trophy" class="icon" style="width:15px;height:15px"></i> Featured competition</span>
+            <h1 class="disp">Win this <span>Lamborghini</span> Huracán EVO</h1>
+            <p class="alt">…or take the <b>£140,000 tax-free cash alternative</b> instead. The choice is yours.</p>
+            <div class="count-row" role="timer" aria-label="Time left to enter">
+              <div class="count-box"><b id="cd-d">0</b><small>Days</small></div>
+              <div class="count-box"><b id="cd-h">0</b><small>Hours</small></div>
+              <div class="count-box"><b id="cd-m">0</b><small>Mins</small></div>
+              <div class="count-box"><b id="cd-s">0</b><small>Secs</small></div>
+            </div>
+            <div class="hero-buy">
+              <div class="bundle-picker" id="heroPicker" role="group" aria-label="Choose ticket bundle">
+                <button data-n="1" class="sel">1 ticket</button>
+                <button data-n="5">5</button>
+                <button data-n="10">10</button>
+                <button data-n="25">25</button>
+              </div>
+              <div class="hero-price"><small>Total</small><b id="heroTotal">£9.95</b></div>
+              <button class="btn btn-gold" id="heroAdd"><i data-lucide="ticket" class="icon"></i> Enter Now</button>
+            </div>
+            <div class="trust-row">
+              <span><i data-lucide="lock" class="icon"></i> Secure checkout</span>
+              <span><i data-lucide="shield-check" class="icon"></i> Guaranteed draw — no extensions</span>
+              <span><i data-lucide="star" class="icon"></i> Rated Excellent by players</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPETITIONS -->
+      <section id="competitions">
+        <div class="wrap">
+          <div class="sec-head">
+            <div>
+              <span class="kicker">This week's competitions</span>
+              <h2 class="disp">Choose your prize</h2>
+              <p>Every competition is drawn on its closing date — guaranteed, with no rollovers or extensions. Pick a prize, choose your tickets, then play Spot the Ball to enter.</p>
+            </div>
+            <div class="filters" id="filters" role="group" aria-label="Filter competitions">
+              <button class="chip sel" data-f="all">All prizes</button>
+              <button class="chip" data-f="cars">Dream cars</button>
+              <button class="chip" data-f="cash">Cash</button>
+              <button class="chip" data-f="lifestyle">Lifestyle</button>
+            </div>
+          </div>
+          <div class="grid" id="grid"></div>
+        </div>
+      </section>
+
+      <!-- SPOT THE BALL -->
+      <section class="spot" id="spot">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="kicker" style="color:var(--gold-2)">The skill-based game</span>
+              <h2 class="disp">Play Spot the Ball</h2>
+              <p>This is a game of skill, not chance. The ball has been removed from the photo — use your judgement of the players' eyes, body positions and the flow of the game to place your cross where you believe the centre of the ball was.</p>
+            </div>
+          </div>
+          <div class="spot-grid">
+            <div>
+              <ol class="spot-steps">
+                <li><span class="n">1</span><p><b>Pick a competition</b> — your entries play for the prize you choose below.</p></li>
+                <li><span class="n">2</span><p><b>Place your cross</b> — click or tap the photo to mark where the ball's centre was. Each click is one entry.</p></li>
+                <li><span class="n">3</span><p><b>Closest cross wins</b> — an independent panel of judges decides the winning position after the competition closes.</p></li>
+              </ol>
+              <label class="flabel" for="spotComp">Competition</label>
+              <select id="spotComp"></select>
+              <div class="coords-readout">
+                <div><small>Your X</small><b id="coordX">—</b></div>
+                <div><small>Your Y</small><b id="coordY">—</b></div>
+                <div><small>Entries</small><b id="entryCount">0</b></div>
+              </div>
+              <div class="entries-list" id="entriesList">
+                <div class="spot-empty">No entries yet — click the photo to place your first cross.</div>
+              </div>
+              <div class="spot-actions">
+                <button class="btn btn-gold" id="spotAdd" disabled><i data-lucide="ticket" class="icon"></i> Add entries to basket</button>
+                <button class="btn btn-outline" id="spotClear"><i data-lucide="rotate-ccw" class="icon"></i> Clear</button>
+              </div>
+            </div>
+            <div>
+              <div class="pitch" id="pitch">
+                <img src="images/img-1.jpg" alt="Football match in a packed stadium, photographed from behind the goal with the ball removed" id="pitchImg" draggable="false" />
+                <div class="cross-h" id="crossH"></div>
+                <div class="cross-v" id="crossV"></div>
+                <span class="pitch-hint"><i data-lucide="crosshair" style="width:14px;height:14px;vertical-align:-2px"></i> Click the photo to place your cross</span>
+              </div>
+              <p style="color:#8fa0c0;font-size:.88rem;margin:14px 2px 0">Coordinates are read on a 0–1000 grid, exactly as our judges use. You can place up to 10 crosses per game — the more crosses, the better your coverage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="kicker">Simple &amp; transparent</span>
+              <h2 class="disp">How it works</h2>
+            </div>
+          </div>
+          <div class="steps">
+            <div class="step reveal"><span class="num">01</span><div class="ic"><i data-lucide="car" class="icon"></i></div><h3>Choose a prize</h3><p>Browse this week's dream cars, cash jackpots and lifestyle prizes, then pick your ticket bundle.</p></div>
+            <div class="step reveal"><span class="num">02</span><div class="ic"><i data-lucide="crosshair" class="icon"></i></div><h3>Play Spot the Ball</h3><p>Place your cross using skill and judgement. Every ticket gives you one entry into the game.</p></div>
+            <div class="step reveal"><span class="num">03</span><div class="ic"><i data-lucide="lock" class="icon"></i></div><h3>Pay securely</h3><p>Checkout over an encrypted connection with 3-D Secure card payments, Apple Pay or Google Pay.</p></div>
+            <div class="step reveal"><span class="num">04</span><div class="ic"><i data-lucide="party-popper" class="icon"></i></div><h3>Winner announced</h3><p>Judges decide the winning position, the closest cross wins, and we call the winner within 48 hours.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WINNERS -->
+      <section class="winners-sec" id="winners">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="kicker">Recent winners</span>
+              <h2 class="disp">Winners every single week</h2>
+              <p>Real people, life-changing prizes — every winner is contacted by phone and announced here after each draw.</p>
+            </div>
+          </div>
+          <div class="winners">
+            <article class="winner reveal">
+              <div class="top"><span class="avatar">JW</span><div><h3>James W.</h3><span class="meta">Manchester · Won 3 Oct 2026</span></div></div>
+              <span class="prize">Porsche 911 Carrera + £20,000 cash</span>
+              <blockquote>“I placed my crosses on my lunch break and forgot all about it. When the call came I thought it was a wind-up — the 911 was on my drive a week later.”</blockquote>
+            </article>
+            <article class="winner reveal">
+              <div class="top"><span class="avatar">SP</span><div><h3>Sarah P.</h3><span class="meta">Bristol · Won 26 Sep 2026</span></div></div>
+              <span class="prize">£75,000 tax-free cash</span>
+              <blockquote>“I took the cash to clear our mortgage. The money was in my account within days and the team kept me updated at every step.”</blockquote>
+            </article>
+            <article class="winner reveal">
+              <div class="top"><span class="avatar">DK</span><div><h3>Daniel K.</h3><span class="meta">Glasgow · Won 19 Sep 2026</span></div></div>
+              <span class="prize">Range Rover Autobiography</span>
+              <blockquote>“Ten tickets for less than a takeaway. My cross was 4mm from the judges' position — I still can't believe it. The car is unreal.”</blockquote>
+            </article>
+          </div>
+          <p class="demo-note">Winner stories shown are illustrative examples for this concept preview; real winner announcements publish here after each live draw.</p>
+        </div>
+      </section>
+
+      <!-- BUNDLES -->
+      <section id="bundles">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="kicker">Better value in bundles</span>
+              <h2 class="disp">Lamborghini ticket bundles</h2>
+              <p>More crosses mean more coverage of the pitch. Bundle tickets for the featured Lamborghini Huracán EVO competition and save up to 25%.</p>
+            </div>
+          </div>
+          <div class="bundles">
+            <div class="bundle">
+              <div class="tk">5 <small>tickets</small></div>
+              <p class="save">Save 10%</p>
+              <p class="was">£49.75</p>
+              <p class="now">£44.78</p>
+              <p>Five crosses on the pitch — a solid spread of entries for the Huracán draw.</p>
+              <button class="btn btn-dark" data-bundle="5">Add 5 tickets</button>
+            </div>
+            <div class="bundle pop">
+              <span class="flag">Most popular</span>
+              <div class="tk">10 <small>tickets</small></div>
+              <p class="save">Save 15%</p>
+              <p class="was">£99.50</p>
+              <p class="now">£84.58</p>
+              <p>Ten crosses and our best-selling bundle — cover the goalmouth properly.</p>
+              <button class="btn btn-gold" data-bundle="10">Add 10 tickets</button>
+            </div>
+            <div class="bundle">
+              <div class="tk">25 <small>tickets</small></div>
+              <p class="save">Save 25%</p>
+              <p class="was">£248.75</p>
+              <p class="now">£186.56</p>
+              <p>Maximum coverage for serious players — twenty-five judged entries.</p>
+              <button class="btn btn-dark" data-bundle="25">Add 25 tickets</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECURE PAYMENT -->
+      <section class="payband" id="payment">
+        <div class="wrap pay-grid">
+          <div class="reveal">
+            <span class="kicker" style="color:var(--gold-2)">Secure payment</span>
+            <h2 class="disp" style="font-size:clamp(2rem,4vw,2.9rem);margin:0 0 14px">Checkout you can trust</h2>
+            <div class="pay-points">
+              <div class="pay-point"><i data-lucide="lock" class="icon"></i><div><b>256-bit TLS encryption</b><p>Your details travel over an encrypted connection and card numbers never touch our servers.</p></div></div>
+              <div class="pay-point"><i data-lucide="shield-check" class="icon"></i><div><b>3-D Secure 2 as standard</b><p>Every card payment is verified with your bank's own approval step before a penny is taken.</p></div></div>
+              <div class="pay-point"><i data-lucide="badge-check" class="icon"></i><div><b>PCI DSS Level 1 processing</b><p>Payments are handled by a certified payment provider — the same standard used by major UK retailers.</p></div></div>
+            </div>
+            <div class="pay-cards">
+              <span class="pay-chip">VISA</span>
+              <span class="pay-chip">Mastercard</span>
+              <span class="pay-chip">AMEX</span>
+              <span class="pay-chip"><i data-lucide="smartphone" class="icon"></i> Apple Pay</span>
+              <span class="pay-chip"><i data-lucide="wallet" class="icon"></i> Google Pay</span>
+            </div>
+          </div>
+          <div class="pay-demo reveal">
+            <p style="margin-top:0"><b>About this concept site:</b> the basket and checkout run in demonstration mode — the full payment flow is shown, but no real payment is taken here. On the live site, checkout connects to a UK payment provider (Stripe) with the protections listed, automated order emails, and a customer account area for entries and results.</p>
+            <p style="margin-bottom:0">Entries are confirmed on screen and by email the moment payment clears, and your Spot the Ball coordinates are stored against every ticket.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="wrap">
+          <div class="sec-head reveal">
+            <div>
+              <span class="kicker">Good to know</span>
+              <h2 class="disp">Questions, answered</h2>
+            </div>
+          </div>
+          <div class="faq reveal">
+            <details>
+              <summary>Is Spot the Ball a game of skill?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>Yes. The ball is removed from a genuine match photograph and you judge where its centre was, using the players' eye lines and body positions. After each competition closes, an independent panel of expert judges decides the winning position — the entry closest to it wins the prize. It is a competition of skill, not a lottery.</p></div>
+            </details>
+            <details>
+              <summary>When are competitions drawn, and are they guaranteed?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>Every competition closes at the date and time shown on its card and is judged within 48 hours — guaranteed, regardless of how many tickets have sold. There are no extensions and no rollovers.</p></div>
+            </details>
+            <details>
+              <summary>Can I take cash instead of the car?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>Yes — every car competition carries a tax-free cash alternative, shown on its card. If you win, simply choose the car or the cash when we call you. Cash prizes are paid by bank transfer within 5 working days.</p></div>
+            </details>
+            <details>
+              <summary>How do I pay, and is it secure?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>We accept Visa, Mastercard, American Express, Apple Pay and Google Pay. Payments are processed over an encrypted connection by a PCI DSS Level 1 provider with 3-D Secure 2 verification — your full card number never reaches our servers.</p></div>
+            </details>
+            <details>
+              <summary>Who can enter?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>Entrants must be 18 or over and resident in the United Kingdom. A free postal entry route is available for every competition — see the terms for the address and format. Please play responsibly: only ever spend what you can afford.</p></div>
+            </details>
+            <details>
+              <summary>How will I know if I've won?<i data-lucide="plus" class="icon"></i></summary>
+              <div class="a"><p>We phone the winner within 48 hours of judging and follow up by email. Winners are also announced on this page and our social channels. If we can't reach a winner within 14 days, the prize goes to the next-closest entry.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-grid">
+          <div>
+            <a class="logo" href="#top" style="margin-bottom:14px">
+              <span class="logo-mark">J</span>
+              <span><b>JOSEPH</b><small>PRIZES</small></span>
+            </a>
+            <p class="blurb">Dream car, cash and lifestyle competitions, decided by skill in our Spot the Ball game. Draws guaranteed every week.</p>
+            <span class="age-badge">18+</span>
+          </div>
+          <div>
+            <h4>Competitions</h4>
+            <ul>
+              <li><a href="#competitions">Dream cars</a></li>
+              <li><a href="#competitions">Cash jackpots</a></li>
+              <li><a href="#competitions">Lifestyle prizes</a></li>
+              <li><a href="#bundles">Ticket bundles</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>About</h4>
+            <ul>
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#spot">Spot the Ball</a></li>
+              <li><a href="#winners">Recent winners</a></li>
+              <li><a href="#payment">Secure payment</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Help</h4>
+            <ul>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="#faq">Terms &amp; conditions</a></li>
+              <li><a href="#faq">Privacy policy</a></li>
+              <li><a href="#faq">Responsible play</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-small">
+          <p style="margin:0">Joseph is a concept website created for demonstration. Competitions, prices, winners and dates shown are illustrative. The live service will operate under its own registered company details, full terms &amp; conditions and a published free-entry route.</p>
+          <p style="margin:0">Please play responsibly. Help and advice on safer play is available at <a href="https://www.begambleaware.org" target="_blank" rel="noopener">BeGambleAware.org</a>. 18+ only.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BASKET DRAWER -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="drawer" id="drawer" aria-label="Basket">
+      <div class="drawer-head">
+        <h3>Your basket</h3>
+        <button class="x-btn" id="drawerClose" aria-label="Close basket"><i data-lucide="x" class="icon"></i></button>
+      </div>
+      <div class="drawer-items" id="drawerItems"></div>
+      <div class="drawer-foot" id="drawerFoot">
+        <div class="total-row"><span>Entries</span><span id="footCount">0</span></div>
+        <div class="total-row grand"><span>Total</span><span id="footTotal">£0.00</span></div>
+        <button class="btn btn-gold btn-block" id="checkoutBtn"><i data-lucide="lock" class="icon"></i> Secure checkout</button>
+        <p class="secure-note"><i data-lucide="shield-check" class="icon"></i> Encrypted checkout · 3-D Secure · No card details stored</p>
+      </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Secure checkout">
+      <div class="overlay show" id="modalOverlay" style="position:absolute"></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3><i data-lucide="lock" style="width:22px;height:22px;vertical-align:-3px"></i> Secure checkout</h3>
+          <button class="x-btn" id="modalClose" aria-label="Close checkout"><i data-lucide="x" class="icon"></i></button>
+        </div>
+        <div class="modal-body">
+          <div id="payView">
+            <div class="order-lines" id="orderLines"></div>
+            <div class="demo-strip"><i data-lucide="info" class="icon"></i><span><b>Demo checkout</b> — this concept site takes no real payment. Use any name, email and card details to see the full flow; live payments connect via Stripe at launch.</span></div>
+            <form id="payForm" novalidate>
+              <div class="field" data-f="name">
+                <label for="fName">Full name</label>
+                <input id="fName" autocomplete="name" placeholder="e.g. Alex Morgan" />
+                <p class="err">Please enter the cardholder's name.</p>
+              </div>
+              <div class="field" data-f="email">
+                <label for="fEmail">Email for entry confirmation</label>
+                <input id="fEmail" type="email" autocomplete="email" placeholder="you@example.co.uk" />
+                <p class="err">Please enter a valid email address.</p>
+              </div>
+              <div class="field" data-f="card">
+                <label for="fCard">Card number</label>
+                <input id="fCard" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" maxlength="23" />
+                <p class="err">Please enter a valid card number (13–19 digits).</p>
+              </div>
+              <div class="frow">
+                <div class="field" data-f="exp">
+                  <label for="fExp">Expiry</label>
+                  <input id="fExp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" maxlength="7" />
+                  <p class="err">Enter a valid future expiry date.</p>
+                </div>
+                <div class="field" data-f="cvc">
+                  <label for="fCvc">CVC</label>
+                  <input id="fCvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" />
+                  <p class="err">Enter the 3–4 digit security code.</p>
+                </div>
+              </div>
+              <button class="btn btn-gold btn-block" type="button" id="payBtn"><i data-lucide="lock" class="icon"></i> <span id="payBtnText">Pay securely</span></button>
+              <p class="secure-note"><i data-lucide="shield-check" class="icon"></i> 256-bit TLS · 3-D Secure 2 · PCI DSS Level 1 processor</p>
+            </form>
+          </div>
+          <div id="successView" hidden>
+            <div class="success">
+              <div class="tick"><i data-lucide="check" class="icon"></i></div>
+              <h4>You're in the draw!</h4>
+              <p>Order reference</p>
+              <p class="ref" id="orderRef">JOS-000000</p>
+              <p id="successSummary"></p>
+              <p style="font-size:.9rem">In the live service, a confirmation email with your ticket numbers and Spot the Ball coordinates would arrive within minutes. Good luck!</p>
+              <div class="acts">
+                <button class="btn btn-dark" id="receiptBtn"><i data-lucide="download" class="icon"></i> Download entry receipt</button>
+                <button class="btn btn-plain" id="continueBtn">Continue browsing</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"><i data-lucide="check-circle-2" class="icon"></i><span id="toastText"></span></div>
+
+    <script>
+      /* ---------- helpers ---------- */
+      const $ = (s, c) => (c || document).querySelector(s);
+      const $$ = (s, c) => Array.from((c || document).querySelectorAll(s));
+      function icons() { if (window.lucide) lucide.createIcons(); }
+      const gbp = n => "£" + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      function nextFriday20() {
+        const now = new Date(); const d = new Date(now);
+        d.setHours(20, 0, 0, 0);
+        let add = (5 - d.getDay() + 7) % 7; // Friday = 5
+        if (add === 0 && d <= now) add = 7;
+        d.setDate(d.getDate() + add);
+        return d;
+      }
+      function hoursFromNow(h) { return new Date(Date.now() + h * 3600 * 1000); }
+      function endsOn(days, hour) {
+        const d = new Date(); d.setDate(d.getDate() + days); d.setHours(hour || 20, 0, 0, 0);
+        if (d <= new Date()) d.setDate(d.getDate() + 1);
+        return d;
+      }
+      function endsLabel(d) {
+        return d.toLocaleDateString("en-GB", { weekday: "short" }) + " " +
+               d.toLocaleTimeString("en-GB", { hour: "numeric", minute: "2-digit" }).replace(" ", "").toLowerCase();
+      }
+
+      /* ---------- catalogue (concept demo prices) ---------- */
+      const FRI = nextFriday20();
+      const PRODUCTS = [
+        { id: "lambo",   name: "Lamborghini Huracán EVO",      cat: "cars",      catLabel: "Dream Car", price: 9.95, cashAlt: "£140,000", img: "images/img-2.jpg", alt: "Red Lamborghini Huracán in a dark studio", ends: FRI, sold: 62 },
+        { id: "cash100", name: "£100,000 Tax-Free Cash",       cat: "cash",      catLabel: "Cash",      price: 2.95, cashAlt: null,        img: null,                 alt: "", ends: FRI, sold: 81 },
+        { id: "rover",   name: "Range Rover Autobiography",    cat: "cars",      catLabel: "Dream Car", price: 7.95, cashAlt: "£95,000",  img: "images/img-3.jpg", alt: "Champagne Range Rover Autobiography in countryside light", ends: endsOn(3), sold: 78 },
+        { id: "porsche", name: "Porsche 911 Carrera S",        cat: "cars",      catLabel: "Dream Car", price: 6.95, cashAlt: "£85,000",  img: "images/img-4.jpg", alt: "Grey Porsche 911 Carrera S at sunset in the mountains", ends: endsOn(4), sold: 41 },
+        { id: "watch",   name: "Gold Moonphase Dress Watch",   cat: "lifestyle", catLabel: "Lifestyle", price: 4.95, cashAlt: "£12,000",  img: "images/img-5.jpg",   alt: "Gold luxury dress watch with moonphase dial and leather strap", ends: endsOn(3), sold: 47 },
+        { id: "audi",    name: "Audi RS e-tron GT",            cat: "cars",      catLabel: "Dream Car", price: 5.95, cashAlt: "£78,000",  img: "images/img-6.jpg",   alt: "Green Audi RS e-tron GT outside a modern house", ends: endsOn(8), sold: 33 },
+        { id: "maldives",name: "Maldives Escape for Two",      cat: "lifestyle", catLabel: "Lifestyle", price: 3.95, cashAlt: "£8,000",   img: "images/img-7.jpg", alt: "Aerial view of a Maldives island with overwater villas", ends: endsOn(10), sold: 29 },
+        { id: "mustang", name: "Ford Mustang GT Fastback",     cat: "cars",      catLabel: "Dream Car", price: 3.95, cashAlt: "£38,000",  img: "images/img-8.jpg", alt: "Red Ford Mustang GT at golden hour", ends: endsOn(4), sold: 55 },
+        { id: "classic", name: "Classic Roadster — 1950s Icon",cat: "cars",      catLabel: "Dream Car", price: 4.95, cashAlt: "£45,000",  img: "images/img-9.jpg", alt: "Silver 1950s-style classic roadster in a dark studio", ends: endsOn(6), sold: 38 }
+      ];
+      const byId = id => PRODUCTS.find(p => p.id === id);
+
+      /* ---------- competition grid ---------- */
+      const grid = $("#grid");
+      function fmtLeft(ms) {
+        if (ms <= 0) return "Closed";
+        const s = Math.floor(ms / 1000);
+        const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+        if (d > 1) return d + " days left";
+        if (d === 1) return "1 day " + h + "h left";
+        return h + "h " + m + "m left";
+      }
+      function cardHTML(p) {
+        const photo = p.img
+          ? '<img src="' + p.img + '" alt="' + p.alt + '" />'
+          : '<div class="cash-art"><small>TAX-FREE CASH</small><div class="amt">£100,000</div><small>PAID BY BANK TRANSFER</small></div>';
+        const cash = p.cashAlt ? '<p class="cashalt">or <b>' + p.cashAlt + '</b> cash alternative</p>' : '<p class="cashalt">Paid straight to your bank — <b>tax-free</b></p>';
+        return '' +
+        '<article class="card" data-cat="' + p.cat + '">' +
+          '<div class="ph' + (p.img ? "" : " cash") + '">' + photo +
+            '<span class="ends-badge" data-ends="' + p.ends.getTime() + '"><i data-lucide="timer" class="icon"></i><span class="ends-txt"></span></span>' +
+            '<span class="cat-badge">' + p.catLabel + '</span>' +
+          '</div>' +
+          '<div class="card-body">' +
+            '<h3>' + p.name + '</h3>' + cash +
+            '<div class="sold"><div class="bar"><div class="fill" style="width:' + p.sold + '%"></div></div><small>' + p.sold + '% of tickets sold · Ends ' + endsLabel(p.ends) + '</small></div>' +
+            '<div class="card-foot">' +
+              '<div class="price-box"><small>Per ticket</small><b>' + gbp(p.price) + '</b></div>' +
+              '<div class="qty"><button data-step="-1" aria-label="Fewer tickets">−</button><output>1</output><button data-step="1" aria-label="More tickets">+</button></div>' +
+              '<button class="add-btn" data-add="' + p.id + '"><i data-lucide="plus" class="icon"></i>Add</button>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+      }
+      function renderGrid() {
+        grid.innerHTML = PRODUCTS.map(cardHTML).join("");
+        icons();
+        $$(".card").forEach(card => {
+          const out = $("output", card);
+          $$(".qty button", card).forEach(b => b.addEventListener("click", () => {
+            let v = parseInt(out.textContent, 10) + parseInt(b.dataset.step, 10);
+            out.textContent = Math.min(50, Math.max(1, v));
+          }));
+          $("[data-add]", card).addEventListener("click", e => {
+            const p = byId(e.currentTarget.dataset.add);
+            addLine({ key: "t-" + p.id, title: p.name + " — Tickets", sub: "Ends " + endsLabel(p.ends) + " · incl. Spot the Ball entries", unit: p.price, qty: parseInt(out.textContent, 10) });
+            toast(parseInt(out.textContent, 10) + " × " + p.name + " added to basket");
+          });
+        });
+        tickEnds();
+      }
+      function tickEnds() {
+        const now = Date.now();
+        $$("[data-ends]").forEach(el => {
+          const left = parseInt(el.dataset.ends, 10) - now;
+          $(".ends-txt", el).textContent = fmtLeft(left);
+          el.classList.toggle("hot", left > 0 && left < 24 * 3600 * 1000);
+        });
+      }
+
+      /* filters */
+      $("#filters").addEventListener("click", e => {
+        const btn = e.target.closest("[data-f]"); if (!btn) return;
+        $$("#filters .chip").forEach(c => c.classList.toggle("sel", c === btn));
+        const f = btn.dataset.f;
+        $$(".card", grid).forEach(c => { c.style.display = (f === "all" || c.dataset.cat === f) ? "" : "none"; });
+      });
+
+      /* ---------- basket ---------- */
+      const cart = new Map(); // key -> {key,title,sub,unit,qty}
+      let lastOrder = null;
+      function cartCount() { let n = 0; cart.forEach(l => n += (l.entries || l.qty)); return n; }
+      function cartTotal() { let t = 0; cart.forEach(l => t += l.unit * l.qty); return t; }
+      function addLine(line) {
+        const ex = cart.get(line.key);
+        if (ex) ex.qty += line.qty; else cart.set(line.key, Object.assign({}, line));
+        renderCart();
+      }
+      function renderCart() {
+        const box = $("#drawerItems");
+        const n = cartCount();
+        const badge = $("#basketCount");
+        badge.hidden = n === 0; badge.textContent = n;
+        if (n === 0) {
+          box.innerHTML = '<div class="drawer-empty"><i data-lucide="shopping-basket" class="icon"></i><p><b>Your basket is empty.</b><br/>Pick a prize and add your tickets to get started.</p></div>';
+        } else {
+          box.innerHTML = Array.from(cart.values()).map(l =>
+            '<div class="line-item">' +
+              '<div class="t"><span>' + l.title + '</span><button data-del="' + l.key + '" aria-label="Remove"><i data-lucide="trash-2" style="width:17px;height:17px"></i></button></div>' +
+              '<div class="sub">' + l.sub + '</div>' +
+              '<div class="r"><div class="qty"><button data-dec="' + l.key + '">−</button><output>' + l.qty + '</output><button data-inc="' + l.key + '">+</button></div><b>' + gbp(l.unit * l.qty) + '</b></div>' +
+            '</div>').join("");
+          $$("[data-del]", box).forEach(b => b.addEventListener("click", () => { cart.delete(b.dataset.del); renderCart(); }));
+          $$("[data-inc]", box).forEach(b => b.addEventListener("click", () => { cart.get(b.dataset.inc).qty++; renderCart(); }));
+          $$("[data-dec]", box).forEach(b => b.addEventListener("click", () => { const l = cart.get(b.dataset.dec); l.qty--; if (l.qty <= 0) cart.delete(b.dataset.dec); renderCart(); }));
+        }
+        $("#footCount").textContent = n;
+        $("#footTotal").textContent = gbp(cartTotal());
+        $("#checkoutBtn").disabled = n === 0;
+        $("#checkoutBtn").style.opacity = n === 0 ? ".55" : "1";
+        icons();
+      }
+      const drawer = $("#drawer"), overlay = $("#overlay");
+      function openDrawer() { drawer.classList.add("open"); overlay.classList.add("show"); }
+      function closeDrawer() { drawer.classList.remove("open"); overlay.classList.remove("show"); }
+      $("#basketBtn").addEventListener("click", openDrawer);
+      $("#drawerClose").addEventListener("click", closeDrawer);
+      overlay.addEventListener("click", closeDrawer);
+
+      /* toast */
+      let toastTimer;
+      function toast(msg) {
+        $("#toastText").textContent = msg;
+        const t = $("#toast"); t.classList.add("show");
+        clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2600);
+      }
+
+      /* ---------- hero ---------- */
+      let heroN = 1;
+      const LAMBO = byId("lambo");
+      const BUNDLE_TOTALS = { 5: 44.78, 10: 84.58, 25: 186.56 }; // £9.95 × n, less 10% / 15% / 25%, rounded to the penny
+      function addBundle(n) {
+        addLine({ key: "bundle-lambo-" + n, title: LAMBO.name + " — Bundle of " + n + " tickets", sub: "Bundle price · Ends " + endsLabel(LAMBO.ends) + " · incl. Spot the Ball entries", unit: BUNDLE_TOTALS[n], qty: 1, entries: n });
+      }
+      $("#heroPicker").addEventListener("click", e => {
+        const b = e.target.closest("[data-n]"); if (!b) return;
+        $$("#heroPicker button").forEach(x => x.classList.toggle("sel", x === b));
+        heroN = parseInt(b.dataset.n, 10);
+        $("#heroTotal").textContent = gbp(heroN === 1 ? LAMBO.price : BUNDLE_TOTALS[heroN]);
+      });
+      $("#heroAdd").addEventListener("click", () => {
+        if (heroN === 1) {
+          addLine({ key: "t-lambo", title: LAMBO.name + " — Tickets", sub: "Ends " + endsLabel(LAMBO.ends) + " · incl. Spot the Ball entries", unit: LAMBO.price, qty: 1 });
+        } else {
+          addBundle(heroN);
+        }
+        toast(heroN + " × Lamborghini Huracán EVO added to basket");
+        openDrawer();
+      });
+
+      /* bundles section */
+      $$("[data-bundle]").forEach(b => b.addEventListener("click", () => {
+        const n = parseInt(b.dataset.bundle, 10);
+        addBundle(n);
+        toast("Bundle of " + n + " Lamborghini tickets added");
+        openDrawer();
+      }));
+
+      /* ---------- countdowns ---------- */
+      function pad(n) { return String(n).padStart(2, "0"); }
+      function tickHero() {
+        let ms = FRI - Date.now(); if (ms < 0) ms = 0;
+        const s = Math.floor(ms / 1000);
+        $("#cd-d").textContent = Math.floor(s / 86400);
+        $("#cd-h").textContent = pad(Math.floor(s % 86400 / 3600));
+        $("#cd-m").textContent = pad(Math.floor(s % 3600 / 60));
+        $("#cd-s").textContent = pad(s % 60);
+      }
+
+      /* ---------- spot the ball ---------- */
+      const pitch = $("#pitch"), crossH = $("#crossH"), crossV = $("#crossV");
+      const spotSel = $("#spotComp");
+      spotSel.innerHTML = PRODUCTS.filter(p => p.cat === "cars").map(p => '<option value="' + p.id + '">' + p.name + ' — ' + gbp(p.price) + '/ticket</option>').join("");
+      let spots = []; // {x,y} on 0-1000 grid
+      function pitchPos(e) {
+        const r = pitch.getBoundingClientRect();
+        const cx = (e.touches ? e.touches[0].clientX : e.clientX);
+        const cy = (e.touches ? e.touches[0].clientY : e.clientY);
+        return { px: Math.min(1, Math.max(0, (cx - r.left) / r.width)), py: Math.min(1, Math.max(0, (cy - r.top) / r.height)), rect: r, cx, cy };
+      }
+      pitch.addEventListener("mousemove", e => {
+        const p = pitchPos(e);
+        crossH.style.opacity = crossV.style.opacity = 1;
+        crossH.style.top = (p.py * 100) + "%";
+        crossV.style.left = (p.px * 100) + "%";
+        $("#coordX").textContent = Math.round(p.px * 1000);
+        $("#coordY").textContent = Math.round(p.py * 1000);
+      });
+      pitch.addEventListener("mouseleave", () => { crossH.style.opacity = crossV.style.opacity = 0; });
+      pitch.addEventListener("click", e => {
+        if (spots.length >= 10) { toast("Maximum 10 crosses per game"); return; }
+        const p = pitchPos(e);
+        const spot = { x: Math.round(p.px * 1000), y: Math.round(p.py * 1000), px: p.px, py: p.py };
+        spots.push(spot);
+        renderSpots();
+      });
+      function renderSpots() {
+        $$(".marker", pitch).forEach(m => m.remove());
+        spots.forEach((s, i) => {
+          const m = document.createElement("span");
+          m.className = "marker";
+          m.style.left = (s.px * 100) + "%"; m.style.top = (s.py * 100) + "%";
+          m.textContent = i + 1;
+          pitch.appendChild(m);
+        });
+        $("#entryCount").textContent = spots.length;
+        const list = $("#entriesList");
+        if (!spots.length) {
+          list.innerHTML = '<div class="spot-empty">No entries yet — click the photo to place your first cross.</div>';
+        } else {
+          list.innerHTML = spots.map((s, i) =>
+            '<div class="entry-chip"><i data-lucide="crosshair" class="icon"></i> Entry ' + (i + 1) + ' — X: ' + s.x + ' · Y: ' + s.y +
+            '<button data-rm="' + i + '" aria-label="Remove entry ' + (i + 1) + '"><i data-lucide="x" style="width:16px;height:16px"></i></button></div>').join("");
+          $$("[data-rm]", list).forEach(b => b.addEventListener("click", () => { spots.splice(parseInt(b.dataset.rm, 10), 1); renderSpots(); }));
+        }
+        $("#spotAdd").disabled = spots.length === 0;
+        icons();
+      }
+      $("#spotClear").addEventListener("click", () => { spots = []; renderSpots(); });
+      $("#spotAdd").addEventListener("click", () => {
+        if (!spots.length) return;
+        const p = byId(spotSel.value);
+        const coords = spots.map(s => "(" + s.x + "," + s.y + ")").join(" ");
+        addLine({ key: "spot-" + p.id + "-" + coords, title: "Spot the Ball — " + p.name, sub: spots.length + " judged entries · " + coords, unit: p.price, qty: spots.length });
+        toast(spots.length + " Spot the Ball entries added to basket");
+        spots = []; renderSpots();
+        openDrawer();
+      });
+
+      /* ---------- checkout ---------- */
+      const modal = $("#modal");
+      function openModal() {
+        closeDrawer();
+        $("#payView").hidden = false; $("#successView").hidden = true;
+        $("#orderLines").innerHTML =
+          Array.from(cart.values()).map(l => '<div class="r"><span>' + l.title + ' × ' + l.qty + '</span><span>' + gbp(l.unit * l.qty) + '</span></div>').join("") +
+          '<div class="r grand"><span>Total to pay</span><span>' + gbp(cartTotal()) + '</span></div>';
+        $("#payBtnText").textContent = "Pay " + gbp(cartTotal()) + " securely";
+        modal.classList.add("open");
+        icons();
+      }
+      function closeModal() { modal.classList.remove("open"); }
+      $("#checkoutBtn").addEventListener("click", () => { if (cartCount()) openModal(); });
+      $("#modalClose").addEventListener("click", closeModal);
+      $("#modalOverlay").addEventListener("click", closeModal);
+
+      const fCard = $("#fCard"), fExp = $("#fExp");
+      fCard.addEventListener("input", () => {
+        const d = fCard.value.replace(/\D/g, "").slice(0, 19);
+        fCard.value = d.replace(/(.{4})/g, "$1 ").trim();
+      });
+      fExp.addEventListener("input", () => {
+        let d = fExp.value.replace(/\D/g, "").slice(0, 4);
+        fExp.value = d.length > 2 ? d.slice(0, 2) + " / " + d.slice(2) : d;
+      });
+      function setInvalid(name, bad) {
+        const f = $('.field[data-f="' + name + '"]');
+        f.classList.toggle("invalid", bad);
+        return !bad;
+      }
+      $("#payForm").addEventListener("submit", e => { e.preventDefault(); runCheckout(); });
+      $("#payBtn").addEventListener("click", runCheckout);
+      function runCheckout() {
+        if ($("#payBtn").disabled) return;
+        let ok = true;
+        ok = setInvalid("name", $("#fName").value.trim().length < 2) && ok;
+        ok = setInvalid("email", !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($("#fEmail").value.trim())) && ok;
+        const digits = fCard.value.replace(/\D/g, "");
+        ok = setInvalid("card", digits.length < 13 || digits.length > 19) && ok;
+        const em = fExp.value.replace(/\D/g, "");
+        let expOk = false;
+        if (em.length === 4) {
+          const mm = parseInt(em.slice(0, 2), 10), yy = 2000 + parseInt(em.slice(2), 10);
+          const now = new Date();
+          expOk = mm >= 1 && mm <= 12 && (yy > now.getFullYear() || (yy === now.getFullYear() && mm >= now.getMonth() + 1));
+        }
+        ok = setInvalid("exp", !expOk) && ok;
+        ok = setInvalid("cvc", !/^\d{3,4}$/.test($("#fCvc").value.trim())) && ok;
+        if (!ok) return;
+        const btn = $("#payBtn");
+        btn.disabled = true;
+        btn.textContent = "Processing securely…";
+        setTimeout(() => {
+          const ref = "JOS-" + Math.floor(100000 + Math.random() * 900000);
+          const summary = cartCount() + " entries · Total " + gbp(cartTotal());
+          lastOrder = { ref, lines: Array.from(cart.values()).map(l => ({ title: l.title, qty: l.qty, unit: l.unit })), total: cartTotal(), name: $("#fName").value.trim(), email: $("#fEmail").value.trim() };
+          $("#orderRef").textContent = ref;
+          $("#successSummary").textContent = summary + " — confirmation sent to " + lastOrder.email + " (demo).";
+          $("#payView").hidden = true; $("#successView").hidden = false;
+          cart.clear(); renderCart();
+          btn.disabled = false;
+          btn.innerHTML = '<i data-lucide="lock" class="icon"></i> <span id="payBtnText">Pay securely</span>';
+          icons();
+        }, 1300);
+      }
+      $("#continueBtn").addEventListener("click", closeModal);
+      $("#receiptBtn").addEventListener("click", () => {
+        if (!lastOrder) return;
+        const txt =
+          "JOSEPH — ENTRY RECEIPT (DEMO)\n" +
+          "==================================\n" +
+          "Order reference: " + lastOrder.ref + "\n" +
+          "Name: " + lastOrder.name + "\n" +
+          "Email: " + lastOrder.email + "\n" +
+          "Date: " + new Date().toLocaleString("en-GB") + "\n\n" +
+          lastOrder.lines.map(l => l.title + " x" + l.qty + " — " + gbp(l.unit * l.qty)).join("\n") +
+          "\n\nTotal paid (demo): " + gbp(lastOrder.total) +
+          "\n\nThis receipt was generated by the Joseph concept site.\nNo real payment was taken. 18+. Please play responsibly.";
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(new Blob([txt], { type: "text/plain" }));
+        a.download = "joseph-receipt-" + lastOrder.ref + ".txt";
+        a.click();
+        URL.revokeObjectURL(a.href);
+      });
+
+      /* ---------- misc ---------- */
+      $("#burger").addEventListener("click", () => $("#mobileNav").classList.toggle("open"));
+      $$("#mobileNav a").forEach(a => a.addEventListener("click", () => $("#mobileNav").classList.remove("open")));
+      document.addEventListener("keydown", e => { if (e.key === "Escape") { closeDrawer(); closeModal(); } });
+
+      const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } }), { threshold: .12 });
+      $$(".reveal").forEach(el => io.observe(el));
+
+      renderGrid();
+      renderCart();
+      renderSpots();
+      tickHero();
+      setInterval(tickHero, 1000);
+      setInterval(tickEnds, 30000);
+      icons();
+    </script>
+  
+<script>
+(function(){
+  document.querySelectorAll('img').forEach(function(img){
+    var src = img.getAttribute('src') || '';
+    var m = src.match(/^images\/(img-\d+\.(jpg|png))$/);
+    if (m) {
+      fetch('images-b64/' + m[1] + '.b64').then(function(r){ return r.text(); }).then(function(b64){
+        img.src = 'data:image/' + (m[2]==='png'?'png':'jpeg') + ';base64,' + b64.trim();
+      }).catch(function(){});
+    }
+  });
+})();
+</script>
+</body>
+</html>
